@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h2>Admin Dashboard</h2>
+        <hr>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-primary text-white mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Manage Students</h5>
+                <p class="card-text">Add, View or Edit Students.</p>
+                <a href="#" class="btn btn-light btn-sm">Go to Students</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-success text-white mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Manage Teachers</h5>
+                <p class="card-text">Assign courses to teachers.</p>
+                <a href="#" class="btn btn-light btn-sm">Go to Teachers</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-warning text-dark mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Notices</h5>
+                <p class="card-text">Publish important notices.</p>
+                <a href="#" class="btn btn-dark btn-sm">Post Notice</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

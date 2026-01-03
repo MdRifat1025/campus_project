@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
+    'students',
    
 ]
 
@@ -127,3 +128,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 AUTH_USER_MODEL = 'accounts.User'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]

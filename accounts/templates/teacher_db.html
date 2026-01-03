@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Teacher Dashboard{% endblock %}
+
+{% block content %}
+<div class="card shadow">
+    <div class="card-body">
+        <h3>Teacher Dashboard</h3>
+        <p>Welcome, {{ request.user.username }}</p>
+    </div>
+</div>
+{% endblock %}
