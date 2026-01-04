@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'students',
+    'teacher',
+    'courses',
    
 ]
 
@@ -132,3 +134,5 @@ AUTH_USER_MODEL = 'accounts.User'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
+# settings.py
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
