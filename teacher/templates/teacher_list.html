@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher List</title>
+</head>
+<body>
+    <h2>Teacher List</h2>
+
+    <a href="{% url 'teacher_add' %}">Add Teacher</a>
+    <hr>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Username</th>
+            <th>Department</th>
+            <th>Phone</th>
+        </tr>
+        {% for teacher in teachers %}
+        <tr>
+            <td>{{ teacher.user.username }}</td>
+            <td>{{ teacher.department }}</td>
+            <td>{{ teacher.phone }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

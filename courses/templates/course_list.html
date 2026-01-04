@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course List</title>
+</head>
+<body>
+    <h2>Course List</h2>
+
+    <a href="{% url 'course_add' %}">Add Course</a>
+    <hr>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Teacher</th>
+            <th>Credit</th>
+        </tr>
+        {% for course in courses %}
+        <tr>
+            <td>{{ course.code }}</td>
+            <td>{{ course.name }}</td>
+            <td>
+                {% if course.teacher %}
+                    {{ course.teacher.user.username }}
+                {% else %}
+                    Not Assigned
+                {% endif %}
+            </td>
+            <td>{{ course.credit }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

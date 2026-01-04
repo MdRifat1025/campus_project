@@ -6,7 +6,7 @@ from .forms import CourseForm
 @login_required
 def course_list(request):
     courses = Course.objects.all()
-    return render(request, 'courses/course_list.html', {'courses': courses})
+    return render(request, 'course_list.html', {'courses': courses})
 
 @login_required
 def course_create(request):
@@ -14,4 +14,4 @@ def course_create(request):
     if form.is_valid():
         form.save()
         return redirect('course_list')
-    return render(request, 'courses/course_form.html', {'form': form})
+    return render(request, 'course_form.html', {'form': form})

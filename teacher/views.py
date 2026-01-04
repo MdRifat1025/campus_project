@@ -6,7 +6,7 @@ from .forms import TeacherForm
 @login_required
 def teacher_list(request):
     teachers = Teacher.objects.all()
-    return render(request, 'teachers/teacher_list.html', {'teachers': teachers})
+    return render(request, 'teacher_list.html', {'teachers': teachers})
 
 @login_required
 def teacher_create(request):
@@ -14,7 +14,7 @@ def teacher_create(request):
     if form.is_valid():
         form.save()
         return redirect('teacher_list')
-    return render(request, 'teachers/teacher_form.html', {'form': form})
+    return render(request, 'teacher_form.html', {'form': form})
 
 @login_required
 def teacher_update(request, pk):
@@ -23,7 +23,7 @@ def teacher_update(request, pk):
     if form.is_valid():
         form.save()
         return redirect('teacher_list')
-    return render(request, 'teachers/teacher_form.html', {'form': form})
+    return render(request, 'teacher_form.html', {'form': form})
 
 @login_required
 def teacher_delete(request, pk):
@@ -31,4 +31,4 @@ def teacher_delete(request, pk):
     if request.method == 'POST':
         teacher.delete()
         return redirect('teacher_list')
-    return render(request, 'teachers/teacher_confirm_delete.html', {'teacher': teacher})
+    return render(request, 'teacher_confirm_delete.html', {'teacher': teacher})
