@@ -2,10 +2,24 @@
 {% block title %}Student Dashboard{% endblock %}
 
 {% block content %}
-<div class="card shadow">
-    <div class="card-body">
-        <h3>Student Dashboard</h3>
-        <p>Welcome, {{ request.user.username }}</p>
+<div class="container mt-4">
+    <div class="card shadow p-3 text-center">
+        <!-- Profile Picture -->
+        <img src="{{ request.user.profile.image.url }}" 
+             alt="{{ request.user.username }}" 
+             class="rounded-circle mb-3" 
+             style="width: 120px; height: 120px; object-fit: cover;">
+
+        <!-- Username -->
+        <h4>{{ request.user.username }}</h4>
+
+        <!-- Student Details -->
+        <div class="mt-3">
+            <p><strong>Email:</strong> {{ request.user.email }}</p>
+            <p><strong>First Name:</strong> {{ request.user.first_name }}</p>
+            <p><strong>Last Name:</strong> {{ request.user.last_name }}</p>
+            <!-- Add more details as needed -->
+        </div>
     </div>
 </div>
 {% endblock %}
