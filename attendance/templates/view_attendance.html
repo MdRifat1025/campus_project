@@ -1,0 +1,21 @@
+{% extends 'Main.html' %}
+{% block title %}My Attendance{% endblock %}
+
+{% block content %}
+<h3>My Attendance</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Marked By</th>
+    </tr>
+    {% for record in attendance_records %}
+    <tr>
+        <td>{{ record.date }}</td>
+        <td>{{ record.status }}</td>
+        <td>{{ record.teacher.user.username }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

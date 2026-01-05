@@ -1,0 +1,11 @@
+{% extends 'Main.html' %}
+{% block title %}Take Attendance{% endblock %}
+
+{% block content %}
+<h3>Take Attendance</h3>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
