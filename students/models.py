@@ -10,7 +10,7 @@ class Students(models.Model):
     )
     department=models.CharField(max_length=50)
     semester=models.CharField(max_length=50)
-    phone=models.IntegerField(unique=True,max_length=15)
+    phone=models.CharField(unique=True,max_length=15)
     created_at=models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

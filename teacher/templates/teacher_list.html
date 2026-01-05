@@ -1,28 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Teacher List</title>
-</head>
-<body>
-    <h2>Teacher List</h2>
+{% extends 'base.html' %}
+{% block title %}Teachers{% endblock %}
 
-    <a href="{% url 'teacher_add' %}">Add Teacher</a>
-    <hr>
+{% block content %}
+<h3>Teacher List</h3>
 
-    <table border="1" cellpadding="8">
-        <tr>
-            <th>Username</th>
-            <th>Department</th>
-            <th>Phone</th>
-        </tr>
-        {% for teacher in teachers %}
-        <tr>
-            <td>{{ teacher.user.username }}</td>
-            <td>{{ teacher.department }}</td>
-            <td>{{ teacher.phone }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+<a href="{% url 'teacher_add' %}" class="btn btn-success btn-sm mb-2">Add Teacher</a>
 
-</body>
-</html>
+<table class="table table-striped">
+  <tr>
+    <th>Username</th>
+    <th>Department</th>
+    <th>Phone</th>
+  </tr>
+  {% for t in teachers %}
+  <tr>
+    <td>{{ t.user.username }}</td>
+    <td>{{ t.department }}</td>
+    <td>{{ t.phone }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
