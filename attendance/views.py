@@ -19,7 +19,7 @@ def take_attendance(request):
             return redirect('take_attendance')
     else:
         form = AttendanceForm()
-    return render(request, 'attendance/take_attendance.html', {'form': form})
+    return render(request, 'take_attendance.html', {'form': form})
 
 # Student views their own attendance
 @login_required
@@ -29,4 +29,4 @@ def view_attendance(request):
         return redirect('dashboard')  # Only student can access
 
     attendance_records = Attendance.objects.filter(student=user.student)
-    return render(request, 'attendance/view_attendance.html', {'attendance_records': attendance_records})
+    return render(request, 'view_attendance.html', {'attendance_records': attendance_records})

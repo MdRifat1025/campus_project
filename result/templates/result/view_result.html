@@ -1,0 +1,21 @@
+{% extends 'Main.html' %}
+{% block title %}My Result{% endblock %}
+
+{% block content %}
+<h3>My Results</h3>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Course</th>
+    <th>Marks</th>
+    <th>Grade</th>
+  </tr>
+  {% for r in results %}
+  <tr>
+    <td>{{ r.course.name }}</td>
+    <td>{{ r.marks }}</td>
+    <td>{{ r.grade }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
